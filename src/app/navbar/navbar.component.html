@@ -1,0 +1,71 @@
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<nav class="navbar navbar-inverse navbar-expand-md">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">NEWS APP</a>
+      </div>
+      
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav mr-auto">
+          <li  *ngIf="isAuthenticated" class="nav-item">
+            <a routerLink="/top-headlines" >TOP-HEADLINES</a>
+          </li>
+          <li  *ngIf="!isAuthenticated" >
+            <a  routerLink="/auth">LOGIN</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav" *ngIf="isAuthenticated">
+          <div class="search">
+              <input  type="text" placeholder="Enter keywords" [(ngModel)]="keywords"  (input)="search()">
+              <i class="fas fa-search" style="color:white"></i>
+          </div>
+         
+        </ul>
+       
+        <ul class="nav navbar-nav navbar-right" *ngIf="isAuthenticated">
+          <li >
+            <a style="cursor: pointer;" (click)="onLogout()">LOGOUT</a>
+          </li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right" *ngIf="isAuthenticated" >
+              <li   class="dropdown" appDropdown>
+                <a style="cursor:pointer"class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">SELECT CATAGORY
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a style="cursor:pointer" class="dropdown-item" (click)="category('Business')">Business</a></li>
+                  <li>
+                    <a style="cursor:pointer" class="dropdown-item" (click)="category('Entertainment')">Entertainment</a></li>
+                    <li>
+                      <a style="cursor:pointer"  class="dropdown-item" (click)="category('General')">General</a></li>
+                    <li>
+                      <li>
+                        <a style="cursor:pointer"  class="dropdown-item" (click)="category('health')">Health</a></li>
+                      <li>
+                        <li>
+                          <a style="cursor:pointer" class="dropdown-item"  (click)="category('Science')">Science</a></li>
+                        <li>
+                          <li>
+                            <a style="cursor:pointer" class="dropdown-item" (click)="category('Sports')">Sports</a></li>
+                          <li>
+                            <li>
+                              <a style="cursor:pointer" class="dropdown-item" (click)="category('Technology')">Technology</a></li>
+                            <li>
+                </ul>
+                
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" >
+              <li  *ngIf="isAuthenticated">
+                <a routerLink="/bookmarks" style="cursor: pointer;" >BOOKMARKS</a>
+              </li>
+                </ul>
+
+      </div>
+    </div>
+  </nav>
+ 
+ 

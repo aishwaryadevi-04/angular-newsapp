@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<div class="container">
+    <div   class="row mb-3">
+      <div *ngFor="let bookmark of fetchedBookmarks | filterPipe:res let i=index " class="col-12 col-md-6 col-lg-3 " >
+          <div class="card border-primary"  style="cursor:pointer"  > 
+            <img class="card-img-top" src="{{bookmark.urlToImage}}" onerror="this.src='https://wallpaperaccess.com/full/2112542.jpg'" style="height:100px;width:100%">
+            <div class="card-body"style="height:200px;">
+              <p class="card-text" style="font-style: Arial;font-size: 15px;">{{bookmark.title}}</p> 
+              <button class="btn btn-primary" style="height:30px;width:110px;text-align:left" (click)="redirectTo(bookmark.url)">Read article...</button>
+            <br/>
+              <div>
+               <i class="fas fa-trash"
+              style="height:15px;width:10px" (click)="remove(i)"></i> 
+              
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="nobookmark-message" style="display: none;"><p>No bookmarks found!</p>
+        </div>
+        </div>
+      </div>

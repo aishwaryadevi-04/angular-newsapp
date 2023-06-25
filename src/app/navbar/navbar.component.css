@@ -1,0 +1,81 @@
+.search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top:5px;
+  }
+  
+  .search input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .search i {
+    font-size: 18px;
+    color: #333;
+    margin-left:2px;
+    cursor: pointer;
+  }
+  
+
+  .navbar {
+    background-color: #333;
+    border-radius: 0;
+  }
+  
+  .navbar-brand {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
+    color: #fff;
+  }
+  
+  .navbar-nav > li > a {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    color: #fff;
+  }
+  
+  .navbar-nav > li > a:hover {
+    color: rgb(0, 140, 255);
+    
+  }
+  
+  .dropdown-menu > li > a {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .dropdown-menu > li > a:hover {
+    color: #fff;
+    background-color: rgb(0, 140, 255) !important;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-collapse {
+      display: block !important;
+    }
+    .navbar-nav {
+      float: none;
+      margin: 0px;
+    }
+    .navbar-nav > li {
+      display: block;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: #fff !important; 
+    color: rgb(165, 118, 30) !important;
+    font-size: 24px !important;
+  }
+  
+ 
+
+  
+  

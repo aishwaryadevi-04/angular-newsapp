@@ -1,0 +1,32 @@
+   
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+ 
+    <div class="container">
+  <div class="row mb-3">
+    
+      <div *ngFor="let article of articles | filterPipe:res; let i=index" class="col-12 col-md-6 col-lg-3 " >
+        <div class="card border-primary"  style="cursor:pointer"  > 
+          <img class="card-img-top" src="{{article.urlToImage}}" alt="img" onerror="this.src='https://wallpaperaccess.com/full/2112542.jpg'"
+           style="height:100px;width:100%">
+          <div class="card-body"style="height:200px;">
+            <p class="card-text" style="font-style: Arial;font-size: 15px;">{{article.title}}</p> 
+            <button class="btn btn-primary" style="height:30px;width:110px;text-align:left" (click)="redirectTo(article.url)">Read article...</button>
+            <br/>
+            <div class="icon-container">
+            <i class="fas fa-bookmark"
+                style="height:15px;width:10px;" (click)="onBookmark(article)"></i>
+                <i class="fa fa-share" [class.open]="showButtons" (click)="onShare(article)" ></i>
+                <share-buttons  #shareButtons class="share-button-container" *ngIf="activeArticle===article && showButtons"  
+                [url]="article.url" [title]="article.title"[show]="5"
+                 theme="material-dark" style="background-color:black;"></share-buttons>
+              </div>
+              
+          </div>
+          
+      </div>
+      <div id="popup-message" style="display: none;"><p>Article bookmarked!!</p>
+      </div>
+    </div>
+  </div>
+    </div>
+   
